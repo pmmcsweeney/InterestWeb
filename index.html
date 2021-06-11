@@ -1,0 +1,149 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>COB Interests</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>City of Bellevue</h1>
+    <h2>Dev team interests:</h2>
+  </header>
+  <div id="container" class="container">
+    <div id="main" role="main">
+      <div id="user-select">
+        <h3>Please enter your username</h3>
+        <form id="user-form" action="">
+          <input id="user-name" autocomplete="off" /><button>Ok</button>
+        </form>
+      </div>
+      <div id="interest-input" class="hide">
+        <h3>Please enter an interest</h3>
+        <form id="form" action="">
+          <input id="input" autocomplete="off" /><button>Enter</button>
+        </form>
+      </div>
+      <div id="vis"></div>
+      <div id="status"></div>
+      <div id="user-list"></div>
+      <button id="remove-interest" class="hide" onclick="revokeInterest()">Remove Interest</button>
+      <div id="controls">
+        <h3>Jitter</h3>
+        <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >
+          <input id="jitter_input" type="range" min="0" max="400" value="100" style="width:240px;">
+          <output name="output" for="input">0.5</output>
+        </form>
+      </div>
+    </div>
+  </div> <!--! end of #container -->
+
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+  <script defer src="js/plugins.js"></script>
+  <script src="js/libs/coffee-script.js"></script>
+  <script src="js/libs/d3.js"></script>
+  <script type="text/coffeescript" src="coffee/vis.coffee"></script>
+  <script type="text/javascript">
+  </script>
+
+
+  <script> 
+    window._gaq = [['_setAccount','UA-17355070-1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+  
+  <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      var userSelect = document.getElementById('user-select');
+      var userForm = document.getElementById('user-form');
+      var userName = document.getElementById('user-name');
+      window.username = '';
+
+      var interestInput = document.getElementById('interest-input');
+      var chart = document.getElementById('vis');
+      var form = document.getElementById('form');
+      var input = document.getElementById('input');
+
+      window.selectedInterest = '';
+
+      function revokeInterest() {
+        var data = {
+          value: window.selectedInterest,
+          username: window.username
+        }
+
+        socket.emit('revoke interest', data);
+      }
+
+      function displayChart(data) {
+        chart.innerHTML = '';
+        newData = transformDataToBubbleChartInput(data);
+        window.display(newData);
+      }
+
+      userForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if(userName.value) {
+            window.username = userName.value;
+            $(userSelect).addClass('hide');
+            $(interestInput).removeClass('hide');
+          }
+      });
+      
+      function transformDataToBubbleChartInput(data) {
+          var newData = [];
+          data.interests.forEach(interest => newData.push({ name: interest.name, count: interest.subscribedUsers.length }));
+          return newData;
+      }
+
+      form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (input.value) {
+              var data = {
+              username: window.username,
+              value: input.value,
+          }
+          socket.emit('submit interest', data);
+          input.value = '';
+        }
+      });
+
+      socket.on('data update', function(data) {
+        window.chartData = data;
+        displayChart(data);
+      })
+    </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>

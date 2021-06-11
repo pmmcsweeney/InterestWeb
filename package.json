@@ -1,0 +1,13 @@
+{
+    "name": "interest-web",
+    "version": "0.0.1",
+    "description": "COB Interest Web. This application will be used to aggregate the leisure interests of Bellevue employees.",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongodb": "^3.6.9",
+        "socket.io": "^4.1.2"
+    },
+    "scripts": {
+        "start": "node index.js"
+    }
+}
