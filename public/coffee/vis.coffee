@@ -337,24 +337,12 @@ Bubbles = () ->
     node.classed("bubble-selected", (d) -> id == idValue(d))
     # if no node is selected, id will be empty
     if id.length > 0
-      d3.select("#user-list").html("");
-      d3.select("#status").html("<h3>Users with <span class=\"active\">#{id}</span> interest:</h3>")
-      subscribedUsers = []
-      for interest in window.chartData.interests
-        subscribedUsers = interest.subscribedUsers if id == interest.name
-      ul = d3.select("#user-list").append('ul');
-      ul.selectAll('li').data(subscribedUsers).enter().append('li').html(String)
-      if (!subscribedUsers.includes(window.username))
-        console.log('found interest');
-        $('#remove-interest').addClass('hide');
-      else
-        $('#remove-interest').removeClass('hide');
-      window.selectedInterest = id
+      window.onInterestSelected(id)
       
     else
       d3.select("#status").html("<h3>Please select an interest</h3>")
-      d3.select("#user-list").html("");
-      window.selectedInterest = ''
+      d3.select("#user-list").html("")
+      window.onInterestSelected("");
 
   # ---
   # hover event
@@ -434,6 +422,7 @@ $ ->
   display = (data) ->
     plotData("#vis", data, plot)
 
+  window.plot = plot
   window.display = display
 
   # bind change in jitter range slider

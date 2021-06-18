@@ -19,54 +19,35 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- end CSS-->
 
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
-</head>
-
-<body>
-  <header>
-    <h1>City of Bellevue</h1>
-    <h2>Dev team interests:</h2>
-  </header>
-  <div id="container" class="container">
-    <div id="main" role="main">
-      <div id="user-select">
-        <h3>Please enter your username</h3>
-        <form id="user-form" action="">
-          <input id="user-name" autocomplete="off" /><button>Ok</button>
-        </form>
-      </div>
-      <div id="interest-input" class="hide">
-        <h3>Please enter an interest</h3>
-        <form id="form" action="">
-          <input id="input" autocomplete="off" /><button>Enter</button>
-        </form>
-      </div>
-      <div id="vis"></div>
-      <div id="status"></div>
-      <div id="user-list"></div>
-      <button id="remove-interest" class="hide" onclick="revokeInterest()">Remove Interest</button>
-      <div id="controls">
-        <h3>Jitter</h3>
-        <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >
-          <input id="jitter_input" type="range" min="0" max="400" value="100" style="width:240px;">
-          <output name="output" for="input">0.5</output>
-        </form>
-      </div>
-    </div>
-  </div> <!--! end of #container -->
-
-
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-
-
+  <!-- Necessary for BubbleCloud rendering -->
   <script defer src="js/plugins.js"></script>
   <script src="js/libs/coffee-script.js"></script>
   <script src="js/libs/d3.js"></script>
   <script type="text/coffeescript" src="coffee/vis.coffee"></script>
-  <script type="text/javascript">
-  </script>
+  
+  <!-- Necessary for React functionality -->
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="components/Header.js" type="text/babel"></script>
+  <script src="components/Username.js" type="text/babel"></script>
+  <script src="components/Input.js" type="text/babel"></script>
+  <script src="components/SelectedItem.js" type="text/babel"></script>
+  <script src="components/BubbleCloud.js" type="text/babel"></script>
+  <script src="components/App.js" type="text/babel"></script>
 
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+
+  <!-- Necessary for client <-> server communication -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
   <script> 
     window._gaq = [['_setAccount','UA-17355070-1'],['_trackPageview'],['_trackPageLoadTime']];
@@ -75,70 +56,6 @@
     });
   </script>
   
-  <script src="/socket.io/socket.io.js"></script>
-    <script>
-      var socket = io();
-
-      var userSelect = document.getElementById('user-select');
-      var userForm = document.getElementById('user-form');
-      var userName = document.getElementById('user-name');
-      window.username = '';
-
-      var interestInput = document.getElementById('interest-input');
-      var chart = document.getElementById('vis');
-      var form = document.getElementById('form');
-      var input = document.getElementById('input');
-
-      window.selectedInterest = '';
-
-      function revokeInterest() {
-        var data = {
-          value: window.selectedInterest,
-          username: window.username
-        }
-
-        socket.emit('revoke interest', data);
-      }
-
-      function displayChart(data) {
-        chart.innerHTML = '';
-        newData = transformDataToBubbleChartInput(data);
-        window.display(newData);
-      }
-
-      userForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          if(userName.value) {
-            window.username = userName.value;
-            $(userSelect).addClass('hide');
-            $(interestInput).removeClass('hide');
-          }
-      });
-      
-      function transformDataToBubbleChartInput(data) {
-          var newData = [];
-          data.interests.forEach(interest => newData.push({ name: interest.name, count: interest.subscribedUsers.length }));
-          return newData;
-      }
-
-      form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          if (input.value) {
-              var data = {
-              username: window.username,
-              value: input.value,
-          }
-          socket.emit('submit interest', data);
-          input.value = '';
-        }
-      });
-
-      socket.on('data update', function(data) {
-        window.chartData = data;
-        displayChart(data);
-      })
-    </script>
-
 
   <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
