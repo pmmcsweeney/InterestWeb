@@ -130,8 +130,8 @@ io.on('connection', (socket) => {
         }
     });
 
-    socket.on('revoke interest', data => {
-        console.log("Revoking interest " + data.value + " from user " + data.username);
+    socket.on('remove interest', data => {
+        console.log("Removing interest " + data.value + " from user " + data.username);
         
         var foundInterest = false;
         for (var i = 0; i < database.interests.length; i++) {

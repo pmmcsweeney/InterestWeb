@@ -14,6 +14,7 @@ class BubbleCloud extends React.Component {
         this.onUsernameSubmit = this.onUsernameSubmit.bind(this);
         this.onInputSubmit = this.onInputSubmit.bind(this);
         this.onRemoveItem = this.onRemoveItem.bind(this);
+        this.onAddItem = this.onAddItem.bind(this);
         this.onInterestSelected = this.onInterestSelected.bind(this);
 
         // Binding to the window to be called from vis.coffee when an interest is selected
@@ -43,7 +44,14 @@ class BubbleCloud extends React.Component {
             value: this.state.selectedInterest
         }
     
-        socket.emit('revoke interest', data);
+        socket.emit('remove interest', data);
+    }
+    onAddItem() {
+        var data = {
+            username: this.state.username,
+            value: this.state.selectedInterest
+        }
+        socket.emit('submit interest', data);
     }
     render() {
         return (
@@ -54,7 +62,8 @@ class BubbleCloud extends React.Component {
                 <SelectedItem selection={this.state.selectedInterest} 
                     interests={this.state.chartData.interests} 
                     username={this.state.username}
-                    onRemoveItem={this.onRemoveItem} />
+                    onRemoveItem={this.onRemoveItem}
+                    onAddItem={this.onAddItem} />
                 <div id="controls">
                     <h3>Jitter</h3>
                     <form id="jitter">
