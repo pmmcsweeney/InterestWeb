@@ -133,6 +133,21 @@ header {
   pointer-events: all;
 }
 
+#interest-input {
+  padding-left: 20px;
+}
+
+#remove-interest, #add-interest {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.input-button {
+  margin-left: 20px;
+}
+
 .bubble-node {
   /* fill: #d1e0f3; */
   fill: #73b3ca59;

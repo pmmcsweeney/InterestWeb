@@ -26,7 +26,7 @@ class Input extends React.Component {
             <div id="interest-input">
                 <h3>Please enter an interest</h3>
                 <form id="form" action="" onSubmit={(event) => this.handleSubmit(event)}>
-                    <input id="input" autoComplete="off" onChange={(event) => this.handleChange(event)} /><button>Enter</button>
+                    <input id="input" autoComplete="off" onChange={(event) => this.handleChange(event)} /><button className="input-button">Enter</button>
                 </form>
             </div>
         );

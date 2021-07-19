@@ -35,7 +35,7 @@ class SelectedItem extends React.Component {
             { showRemoveItemButton && 
                 <button id="remove-interest" onClick={() => this.props.onRemoveItem()}>Remove Interest</button>
             }
-            { !showRemoveItemButton && this.props.username &&
+            { !showRemoveItemButton && this.props.username && this.props.selection.length > 0 &&
                 <button id="add-interest" onClick={() => this.props.onAddItem()}>Add Interest</button>
             }
             </React.Fragment>
