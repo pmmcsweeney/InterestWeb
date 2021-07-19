@@ -56,7 +56,7 @@ header {
   padding-right: 1em;
 }
 
-#user-form input {
+.user-form input {
   
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -71,7 +71,7 @@ header {
     border-top-right-radius: 0;
 }
 
-#user-form button {
+.user-form button {
   padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -142,10 +142,6 @@ header {
   margin-right: 20px;
   margin-bottom: 20px;
   font-size: 20px;
-}
-
-.input-button {
-  margin-left: 20px;
 }
 
 .bubble-node {

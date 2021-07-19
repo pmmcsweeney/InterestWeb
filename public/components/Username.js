@@ -21,8 +21,8 @@ class Username extends React.Component {
         return (
             <div id="user-select">
                 <h3>Please enter your username</h3>
-                <form id="user-form" action="" onSubmit={this.handleSubmit}>
-                    <input id="user-name" autoComplete="off" onChange={(event) => this.handleChange(event)} /><button className="input-button">Ok</button>
+                <form id="user-form" className="user-form" action="" onSubmit={this.handleSubmit}>
+                    <input id="user-name" autoComplete="off" onChange={(event) => this.handleChange(event)} /><button className="input-button">Submit</button>
                 </form>
             </div>
         );
