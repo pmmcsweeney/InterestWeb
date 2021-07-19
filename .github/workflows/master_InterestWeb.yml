@@ -52,5 +52,5 @@ jobs:
       with:
         app-name: 'InterestWeb'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_cb626db1807540f59a7e40c135f6f5d5 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_42352b755d93407c8fadc66134b628a6 }}
         package: .
