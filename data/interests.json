@@ -1,0 +1,342 @@
+[{
+  "_id": {
+    "$oid": "60cbb634a44eb60033c8ddef"
+  },
+  "name": "Cooking",
+  "subscribedUsers": [
+    "firshtashefa",
+    "Cheryl",
+    "Zorba",
+    "Patrick McSweeney",
+    "Roopa",
+    "Alice"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb638a44eb60033c8ddf0"
+  },
+  "name": "Reading",
+  "subscribedUsers": [
+    "Cheryl",
+    "Zorba",
+    "Solvita",
+    "firshtashefa",
+    "Patrick McSweeney",
+    "Enzhou",
+    "Ted Van Dyken",
+    "Paul Jones"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb639a44eb60033c8ddf1"
+  },
+  "name": "Web Development",
+  "subscribedUsers": [
+    "Patrick McSweeney",
+    "Cheryl"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb653a44eb60033c8ddf3"
+  },
+  "name": "Hiking",
+  "subscribedUsers": [
+    "firshtashefa",
+    "Zorba",
+    "Solvita",
+    "Matt",
+    "Patrick McSweeney",
+    "Enzhou",
+    "Paul Jones"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb655a44eb60033c8ddf4"
+  },
+  "name": "Design",
+  "subscribedUsers": [
+    "Cheryl"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb66ba44eb60033c8ddf5"
+  },
+  "name": "Karate",
+  "subscribedUsers": [
+    "Ted Van Dyken"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb671a44eb60033c8ddf6"
+  },
+  "name": "Watercolor",
+  "subscribedUsers": [
+    "Ted Van Dyken",
+    "mnair",
+    "mnair"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb679a44eb60033c8ddf8"
+  },
+  "name": "Acrylic Painting",
+  "subscribedUsers": [
+    "Ted Van Dyken",
+    "mnair"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb67aa44eb60033c8ddf9"
+  },
+  "name": "Comics",
+  "subscribedUsers": [
+    "Cheryl",
+    "Ted Van Dyken"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb67ca44eb60033c8ddfa"
+  },
+  "name": "Movies",
+  "subscribedUsers": [
+    "Cheryl",
+    "Zorba",
+    "Matt",
+    "Patrick McSweeney"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb681a44eb60033c8ddfb"
+  },
+  "name": "Origami",
+  "subscribedUsers": [
+    "Ted Van Dyken"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb6aba44eb60033c8ddfc"
+  },
+  "name": "Baking",
+  "subscribedUsers": [
+    "Solvita",
+    "Cheryl",
+    "Alice"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb6c4a44eb60033c8ddfe"
+  },
+  "name": "Music",
+  "subscribedUsers": [
+    "Cheryl",
+    "Zorba",
+    "Patrick McSweeney",
+    "Roopa"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb6d6a44eb60033c8ddff"
+  },
+  "name": "Camping",
+  "subscribedUsers": [
+    "Kristine",
+    "Patrick McSweeney",
+    "Zorba"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb6d6a44eb60033c8de00"
+  },
+  "name": "Yoga",
+  "subscribedUsers": [
+    "Cheryl"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb6e0a44eb60033c8de01"
+  },
+  "name": "Skiing",
+  "subscribedUsers": [
+    "Kristine"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb727a44eb60033c8de02"
+  },
+  "name": "Watercolor",
+  "subscribedUsers": [
+    "Zorba"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb758a44eb60033c8de03"
+  },
+  "name": "Game Development",
+  "subscribedUsers": [
+    "Patrick McSweeney"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbb9a5a44eb60033c8de04"
+  },
+  "name": "Board Games",
+  "subscribedUsers": [
+    "Patrick McSweeney",
+    "Matt",
+    "Paul Jones"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbbab5a44eb60033c8de05"
+  },
+  "name": "Basketball",
+  "subscribedUsers": [
+    "Zorba",
+    "Paul Jones"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbbabaa44eb60033c8de06"
+  },
+  "name": "Sailing",
+  "subscribedUsers": [
+    "Patrick McSweeney"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbbb1ea44eb60033c8de07"
+  },
+  "name": "Swimming",
+  "subscribedUsers": [
+    "Zorba",
+    "Cheryl",
+    "Paul Jones",
+    "Alice"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbbd20a44eb60033c8de08"
+  },
+  "name": "Travel",
+  "subscribedUsers": [
+    "Matt",
+    "Cheryl",
+    "Alice",
+    "Solvita"
+  ]
+},{
+  "_id": {
+    "$oid": "60cbbd55a44eb60033c8de09"
+  },
+  "name": "Biking",
+  "subscribedUsers": [
+    "Matt"
+  ]
+},{
+  "_id": {
+    "$oid": "60f0c4144a8e62003883bf87"
+  },
+  "name": "Running",
+  "subscribedUsers": [
+    "Enzhou",
+    "Paul Jones"
+  ]
+},{
+  "_id": {
+    "$oid": "60f0c4894a8e62003883bf89"
+  },
+  "name": "Toastmasters",
+  "subscribedUsers": [
+    "Enzhou"
+  ]
+},{
+  "_id": {
+    "$oid": "60f1b7b44a8e62003883bf8d"
+  },
+  "name": "Clamming",
+  "subscribedUsers": [
+    "Alice"
+  ]
+},{
+  "_id": {
+    "$oid": "60f60300c7ac00003462f7c1"
+  },
+  "name": "Painting",
+  "subscribedUsers": [
+    "Roopa",
+    "mnair"
+  ]
+},{
+  "_id": {
+    "$oid": "60f6031dc7ac00003462f7c2"
+  },
+  "name": "Fitness",
+  "subscribedUsers": [
+    "Roopa"
+  ]
+},{
+  "_id": {
+    "$oid": "60f60354c7ac00003462f7c3"
+  },
+  "name": "Interior Design",
+  "subscribedUsers": [
+    "Roopa",
+    "mnair"
+  ]
+},{
+  "_id": {
+    "$oid": "60f60645c468180038ddc775"
+  },
+  "name": "Drawing",
+  "subscribedUsers": [
+    "Solvita"
+  ]
+},{
+  "_id": {
+    "$oid": "60f60660c468180038ddc776"
+  },
+  "name": "Kayaking",
+  "subscribedUsers": [
+    "Solvita"
+  ]
+},{
+  "_id": {
+    "$oid": "60f606f6c468180038ddc777"
+  },
+  "name": "Present wrapping",
+  "subscribedUsers": [
+    "Solvita"
+  ]
+},{
+  "_id": {
+    "$oid": "60f60700c468180038ddc778"
+  },
+  "name": "Decorating desserts",
+  "subscribedUsers": [
+    "Solvita"
+  ]
+},{
+  "_id": {
+    "$oid": "60f60729c468180038ddc779"
+  },
+  "name": "Exploring",
+  "subscribedUsers": [
+    "Solvita"
+  ]
+},{
+  "_id": {
+    "$oid": "60f61400c468180038ddc77a"
+  },
+  "name": "Swords",
+  "subscribedUsers": [
+    "Paul Jones"
+  ]
+},{
+  "_id": {
+    "$oid": "60f701acc468180038ddc77b"
+  },
+  "name": "Snorkeling",
+  "subscribedUsers": [
+    "Alice"
+  ]
+}]
